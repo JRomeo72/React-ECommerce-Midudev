@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import '../assets/css/filters.css'
 
+// eslint-disable-next-line react/prop-types
 const Filters = ( { setFilters } ) => {
 
     const [ miPrice, setMiPrice ] = useState(0)
+    const priceFilterId = useId()
+    const categoryFilterId = useId()    
 
     const handleChangeMiPrice = (event) => {
         setMiPrice(event.target.value)
@@ -24,12 +27,12 @@ const Filters = ( { setFilters } ) => {
     return (
         <div className='filters'>
             <div>
-                <label htmlFor="price">Precio</label>
-                <input type="range" id='price' min='0' max='1000' onChange={handleChangeMiPrice} />
+                <label htmlFor={priceFilterId}>Precio</label>
+                <input type="range" id={priceFilterId} min='0' max='1000' onChange={handleChangeMiPrice} />
                 <span>${ miPrice }</span>
             </div>
-            <div><label htmlFor="category">Categoría</label>
-                <select id="category" onChange={handleChangeCategory}>
+            <div><label htmlFor={categoryFilterId}>Categoría</label>
+                <select id={categoryFilterId} onChange={handleChangeCategory}>
                     <option value="all">Todas</option>
                     <option value="laptops">Portátiles</option>
                     <option value="smartphones">Celulares</option>
