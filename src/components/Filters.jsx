@@ -1,8 +1,12 @@
 import { useId, useState } from 'react'
 import '../assets/css/filters.css'
+import useFilters from '../hooks/useFilters'
 
 // eslint-disable-next-line react/prop-types
-const Filters = ( { setFilters } ) => {
+// const Filters = ( { setFilters } ) => {
+const Filters = () => {
+
+    const [ setFilters ] = useFilters()
 
     const [ miPrice, setMiPrice ] = useState(0)
     const priceFilterId = useId()
