@@ -7,6 +7,7 @@ function useFilters () {
 	const [ filters, setFilters ] = useContext(FiltersContext)
 
 	const filterProducts = (products) => {
+
 		return products.filter(product => {
 			return (
 				product.price >= filters.minPrice && 
@@ -18,8 +19,8 @@ function useFilters () {
 		})
 	}
 
-	// return { filterProducts, setFilters }
-	return [ filterProducts, setFilters ]
+	return { filters, setFilters, filterProducts }
+	// return [ filterProducts, setFilters ]
 
 }
 

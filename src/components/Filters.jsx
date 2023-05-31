@@ -6,14 +6,15 @@ import useFilters from '../hooks/useFilters'
 // const Filters = ( { setFilters } ) => {
 const Filters = () => {
 
-    const [ setFilters ] = useFilters()
+    // const { setFilters } = useFilters()
+    const { filters, setFilters } = useFilters()
 
-    const [ miPrice, setMiPrice ] = useState(0)
+    // const [ miPrice, setMiPrice ] = useState(0)
     const priceFilterId = useId()
     const categoryFilterId = useId()    
 
     const handleChangeMiPrice = (event) => {
-        setMiPrice(event.target.value)
+        // setMiPrice(event.target.value)
 
         setFilters(prevState => ({
             ...prevState,
@@ -32,8 +33,8 @@ const Filters = () => {
         <div className='filters'>
             <div>
                 <label htmlFor={priceFilterId}>Precio</label>
-                <input type="range" id={priceFilterId} min='0' max='1000' onChange={handleChangeMiPrice} />
-                <span>${ miPrice }</span>
+                <input type="range" id={priceFilterId} min='0' max='1000' onChange={handleChangeMiPrice} value={filters.minPrice} />
+                <span>${ filters.minPrice }</span>
             </div>
             <div><label htmlFor={categoryFilterId}>Categoría</label>
                 <select id={categoryFilterId} onChange={handleChangeCategory}>
