@@ -45,3 +45,12 @@
     object-fit: cover;
     background: #fff;
   }
+
+  .products .add-remove {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .products .add-remove .remove-from-cart {
+    background-color: red;
+  }

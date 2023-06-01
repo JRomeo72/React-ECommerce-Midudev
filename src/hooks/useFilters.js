@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { FiltersContext } from '../context/Filters'
 
-function useFilters () {
+const useFilters = () => {
 
 	// const [ filters, setFilters ] = useState( { category: 'all', minPrice: 0 })
 	const [ filters, setFilters ] = useContext(FiltersContext)

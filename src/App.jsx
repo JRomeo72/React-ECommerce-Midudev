@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Products from './components/Products'
 import Cart from './components/Cart'
 import Footer from './components/Footer'
+import { CartProvider } from './context/Cart'
 
 function App() {
 
@@ -13,12 +14,12 @@ function App() {
 	const filteredProducts = filterProducts(products)
 
 	return (
-		<>
+		<CartProvider>
 			<Header />
 			<Products products={filteredProducts} />
 			<Cart />
 			<Footer />
-		</>
+		</CartProvider>
 	)
 }
 
