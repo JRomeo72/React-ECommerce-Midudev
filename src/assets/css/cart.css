@@ -1,11 +1,14 @@
 .cart {
     background: #000;
-    display: none;
+    /* display: none; */
     padding: 32px;
     position: fixed;
-    right: 0px;
+    right: 0;
     top: 0px;
     width: 200px;
+    height: 100%;
+    transform: translateX(264px);
+    transition: all .3s ease;
   }
   
   .cart img {
@@ -51,6 +54,8 @@
   }
   
   .cart-button ~ input:checked ~ .cart {
-    height: 100%;
-    display: block;
+    /* height: 100%; */
+    /* display: block; */
+    right: 0;
+    transform: translateX(0);
   }
